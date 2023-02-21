@@ -1,0 +1,20 @@
+python -m venv cliente1
+
+cd -> scripts 
+
+source activate // UNIX - git bash
+
+pip install django
+
+django-admin startproject app . 
+
+python manage.py runserver
+
+python manage.py migrate
+
+python manage.py createsuperuser
+
+python manage.py makemigrations
+
+python manage.py migrate
+

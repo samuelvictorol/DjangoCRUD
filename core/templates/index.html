@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Listar</h1>
+    {% for pessoa in pessoas %}
+        <li style="display: flex; gap: 5vw">{{ pessoa.id }} - {{ pessoa.nome }} <a style="color: blueviolet;" href="{% url 'editar' pessoa.id %}">Editar</a> <a style="color: red" href="{% url 'deletar' pessoa.id %}">Deletar</a></li>
+    {% endfor %}
+    <h1>Adicionar</h1>
+    <form method="POST" action="{% url 'salvar' %}">
+        {% csrf_token %}
+        <input type="text" name="nome">
+        <button type="submit">Adicionar</button>
+    </form>
+</body>
+</html>

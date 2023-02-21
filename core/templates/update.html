@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-bt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Pessoa</h1>
+    <p> {{pessoa.id}} - {{pessoa.nome}} </p>
+    <form method="POST" action="{% url 'update' pessoa.id%}" >
+        {% csrf_token %}
+        <h1>Editar:</h1>
+        <input id="nomeInput" onkeyup="change()" type="text" name="nome" value="{{pessoa.nome}}">
+        <button type="submit">Editar</button>
+    </form>
+    <!-- <h1>Preview</h1>
+    <p id="preview">{{pessoa.nome}}</p>
+    
+    <script>
+        function change(){
+            const nomeInput = document.querySelector('#nomeInput')
+            const preview = document.querySelector('#preview')
+            preview.innerHTML = nomeInput.value
+        }
+    </script> -->
+</body>
+</html>
