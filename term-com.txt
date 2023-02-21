@@ -1,0 +1,11 @@
+python -m venv NAME
+
+cd -> scripts 
+
+source activate // UNIX - git bash
+
+pip install django
+
+django-admin startproject app . 
+
+python manage.py runserver
