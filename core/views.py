@@ -22,7 +22,7 @@ def update(request, id):
     pessoa.save()
     return redirect(home)
 
-def deletar(id):
+def deletar(request, id):
     pessoa = Pessoa.objects.get(id = id)
     pessoa.delete()
     return redirect(home)
